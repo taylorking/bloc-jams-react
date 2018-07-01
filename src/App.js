@@ -18,7 +18,10 @@ class App extends Component {
        </header>
        <main>
        <Route exact path="/" component={Landing} />
-       <Route path="/library" component={Library} />
+       <Route path="/Library" component={Library} />
+
+       <Route exact path="/" component={Landing} />
+       <Route path="/Album" component={Album} />
        </main>
       </div>
     );
