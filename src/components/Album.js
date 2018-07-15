@@ -9,9 +9,9 @@ import albumData from './../data/albums';
        return album.slug === this.props.match.params.slug
      });
 
-     this.state = {
-       album: album
-     };
+       this.state = {
+         album: album
+       };
      }
 
      render() {
@@ -26,34 +26,31 @@ import albumData from './../data/albums';
           </div>
         </section>
         <table id="song-list">
-          <colgroup>
-            <col id="song-number-column" />
-            <col id="song-title-column" />
-            <col id="song-duration-column" />
-          </colgroup>
-          <tbody>
-          render() {
-            return (
-              <section className="album">
-                {
-                  this.state.album.songs.map( (album, index) =>
-                  <Link to={`/album/${album.slug}`} key={index}>
-                     <img src={album.albumCover} alt={album.title} />
-                     <div>{album.title}</div>
-                     <div>{album.artist}</div>
-                     <div>{album.songs.length} songs</div>
-                     </Link>
-                  )
-                }
-              </section>
-            );
-          }
-        }
-          </tbody>
-        </table>
-         </section>
-       );
-     }
+         <colgroup>
+           <col id="song-number-column" />
+           <col id="song-title-column" />
+           <col id="song-duration-column" />
+         </colgroup>
+         <tbody>
+
+           {
+            this.state.album.songs.map((song, index) => {
+              return <tr key={index}>
+               <td> {song_number.id}> {song_number.text};</td>
+               <td> {song_name.id}> {song_name.text};</td>
+               <td> {song_duration.id}> {song_duration.text};</td></tr>
+              })
+              this.state = {
+                song_number = song_number
+              };
+            }
+
+         </tbody>
+       </table>
+     </section>
+     )
+
    }
+ }
 
 export default Album;
