@@ -33,17 +33,15 @@ import albumData from './../data/albums';
          </colgroup>
          <tbody>
 
-           {
-            this.state.album.songs.map((song, index) => {
-              return <tr key={index}>
-               <td> {song_number.id}> {song_number.text};</td>
-               <td> {song_name.id}> {song_name.text};</td>
-               <td> {song_duration.id}> {song_duration.text};</td></tr>
-              })
-              this.state = {
-                song_number = song_number
-              };
-            }
+         {
+   this.state.album.songs.map((song, index) => {
+       return <tr key={index}>
+       <td> {song.title}</td>
+       <td> {song.duration}</td>
+       <td> {index + 1}</td></tr>
+   })
+
+   }
 
          </tbody>
        </table>
