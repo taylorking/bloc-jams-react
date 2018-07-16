@@ -36,9 +36,10 @@ import albumData from './../data/albums';
          {
    this.state.album.songs.map((song, index) => {
        return <tr key={index}>
+       <td> {index + 1}</td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
-       <td> {index + 1}</td></tr>
+       </tr>
    })
 
    }
