@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -20,6 +21,19 @@
 
 .App-intro {
   font-size: large;
+}
+
+.song{
+	
+}
+
+.song:hover{
+	background-color:yellow;
+}
+
+.play{
+   background-color:green;
+
 }
 
 @keyframes App-logo-spin {

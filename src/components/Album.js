@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
+import Ionicon from 'react-ionicons';
 
   class Album extends Component {
   constructor(props) {
@@ -10,9 +11,55 @@ import albumData from './../data/albums';
      });
 
        this.state = {
-         album: album
+       album: album,
+       currentSong: album.songs[0],
+       isPlaying: false
        };
+        this.audioElement = document.createElement('audio');
+        this.audioElement.src = album.songs[0].audioSrc;
      }
+
+     play() {
+          this.audioElement.play();
+          this.setState({ isPlaying: true });
+        }
+
+     pause() {
+      this.audioElement.pause();
+      this.setState({ isPlaying: false });
+    }
+
+    setSong(song) {
+        console.log(song);
+        this.audioElement.src = song.audioSrc;
+        this.setState({ currentSong: song, isPlaying:
+       (this.state.isPlaying ? false : true)
+        });
+        console.log(this.state.isPlaying);
+      }
+
+    handleSongClick(song) {
+        const isSameSong = this.state.currentSong === song;
+        if (this.state.isPlaying && isSameSong) {
+       this.pause();
+     } else {
+       if (!isSameSong) { this.setSong(song); }
+       this.play();
+      }
+    }
+
+    songClass(song) {
+          if (this.state.currentSong === song) {
+            if (this.state.isPlaying) {
+              return 'song-playing';
+            } else {
+              return 'song';
+            }
+          }
+        return 'song';
+
+      }
+
 
      render() {
        return (
@@ -26,16 +73,24 @@ import albumData from './../data/albums';
           </div>
         </section>
         <table id="song-list">
+        <span>
+        <ion-icon name="play"></ion-icon>
+        </span>
+        <span>
          <colgroup>
            <col id="song-number-column" />
            <col id="song-title-column" />
            <col id="song-duration-column" />
          </colgroup>
+         </span>
          <tbody>
+
+
+
 
          {
    this.state.album.songs.map((song, index) => {
-       return <tr key={index}>
+       return <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
        <td> {index + 1}</td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
