@@ -74,7 +74,6 @@ import Ionicon from 'react-ionicons';
         </section>
         <table id="song-list">
         <span>
-        <ion-icon name="play"></ion-icon>
         </span>
         <span>
          <colgroup>
@@ -85,13 +84,11 @@ import Ionicon from 'react-ionicons';
          </span>
          <tbody>
 
-
-
-
          {
    this.state.album.songs.map((song, index) => {
        return <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-       <td> {index + 1}</td>
+       <td> {<ion-icon name="play"></ion-icon>}
+       {<ion-icon name="pause"></ion-icon>}</td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
        </tr>
@@ -106,5 +103,8 @@ import Ionicon from 'react-ionicons';
 
    }
  }
+
+
+
 
 export default Album;
