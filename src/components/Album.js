@@ -74,38 +74,37 @@ import Ionicon from 'react-ionicons';
        return (
          <section className="album">
          <section id="album-info">
-           <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+         <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
           <div className="album-details">
-          <h1 id="album-title">{this.state.album.title}</h1>
-          <h2 className="artist">{this.state.album.artist}</h2>
+           <h1 id="album-title">{this.state.album.title}</h1>
+           <h2 className="artist">{this.state.album.artist}</h2>
           <div id="release-info">{this.state.album.releaseInfo}</div>
           </div>
         </section>
         <table id="song-list">
-        <span>
          <colgroup>
            <col id="song-number-column" />
            <col id="song-title-column" />
            <col id="song-duration-column" />
          </colgroup>
-         </span>
-
-
-  <tbody>
-   this.state.album.songs.map((song, index) => {
-       <tr> className="song" key={index} onClick={() => this.handleSongClick(song)} ></tr>
-       <td> onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)} ></td>
-       <td> <ion-icon name="play"></ion-icon></td>
-       <td> <ion-icon name="pause"></ion-icon></td>
-       <td> {song.title}</td>
-       <td> {song.duration}</td>
-    </tbody>
-  </table>
-</section>
-);
+         <section>
+         <table>
+         <tbody>
+         this.state.album.songs.map((song, index) =>
+             <tr> className="song" key={index} onClick={() => this.handleSongClick(song)}>
+             <td onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)}></td>
+             <td> <ion-icon name="play"></ion-icon></td>
+             <td> <ion-icon name="pause"></ion-icon></td>
+             <td> {song.title}</td>
+             <td> {song.duration}</td>
+             </tr>
+           )}
+         </tbody>
+        </table>
+      </section>
+    );
+  }
 }
-}
-
 
 
 
