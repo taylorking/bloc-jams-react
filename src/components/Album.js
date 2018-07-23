@@ -22,11 +22,20 @@ import Ionicon from 'react-ionicons';
      play() {
           this.audioElement.play();
           this.setState({ isPlaying: true });
-        }
+     }
 
      pause() {
       this.audioElement.pause();
       this.setState({ isPlaying: false });
+
+    }
+
+    onHover(song) {
+         this.setState({ hovered: song });
+    }
+
+    offHover(song) {
+         this.setState({ hovered: null });
     }
 
     setSong(song) {
@@ -74,35 +83,28 @@ import Ionicon from 'react-ionicons';
         </section>
         <table id="song-list">
         <span>
-        </span>
-        <span>
          <colgroup>
            <col id="song-number-column" />
            <col id="song-title-column" />
            <col id="song-duration-column" />
          </colgroup>
          </span>
-         <tbody>
 
-         {
+
+  <tbody>
    this.state.album.songs.map((song, index) => {
-       return <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-       <td> {<ion-icon name="play"></ion-icon>}
-       {<ion-icon name="pause"></ion-icon>}</td>
+       <tr> className="song" key={index} onClick={() => this.handleSongClick(song)} ></tr>
+       <td> onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)} ></td>
+       <td> <ion-icon name="play"></ion-icon></td>
+       <td> <ion-icon name="pause"></ion-icon></td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
-       </tr>
-   })
-
-   }
-
-         </tbody>
-       </table>
-     </section>
-     )
-
-   }
- }
+    </tbody>
+  </table>
+</section>
+);
+}
+}
 
 
 
