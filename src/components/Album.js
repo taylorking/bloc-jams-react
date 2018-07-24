@@ -4,6 +4,7 @@ import Ionicon from 'react-ionicons';
 
   class Album extends Component {
   constructor(props) {
+     console.log(albumData)
        super(props);
 
        const album = albumData.find( album => {
@@ -89,14 +90,13 @@ import Ionicon from 'react-ionicons';
       </colgroup>
       <tbody>
       this.state.album.songs.map((song, index) => {
-        <tr> className="song" key={index} onClick={() => this.handleSongClick(song)}>
-        <td onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)}></td>
+        <tr> className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)}>
         <td> <ion-icon name="play"></ion-icon></td>
         <td> <ion-icon name="pause"></ion-icon></td>
         <td> {song.title}</td>
         <td> {song.duration}</td>
         </tr>
-        )}
+      }
       </tbody>
     </table>
     </section>
