@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import Ionicon from 'react-ionicons';
+import { PlayButton, PauseButton } from 'react-player-controls';
 
   class Album extends Component {
   constructor(props) {
@@ -74,7 +75,6 @@ import Ionicon from 'react-ionicons';
         </section>
         <table id="song-list">
         <span>
-        <ion-icon name="play"></ion-icon>
         </span>
         <span>
          <colgroup>
@@ -85,20 +85,16 @@ import Ionicon from 'react-ionicons';
          </span>
          <tbody>
 
-
-
-
          {
    this.state.album.songs.map((song, index) => {
-       return <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
-       <td> {index + 1}</td>
+       return <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
+       <td> <ion-icon name="play"></ion-icon></td>
+         <td> <ion-icon name="pause"></ion-icon></td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
        </tr>
-   })
-
-   }
-
+            })
+           }
          </tbody>
        </table>
      </section>
@@ -106,5 +102,7 @@ import Ionicon from 'react-ionicons';
 
    }
  }
+
+
 
 export default Album;
