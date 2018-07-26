@@ -14,10 +14,23 @@ import { PlayButton, PauseButton } from 'react-player-controls';
        this.state = {
        album: album,
        currentSong: album.songs[0],
-       isPlaying: false
+       isPlaying: false,
+       isHovered: null,
        };
         this.audioElement = document.createElement('audio');
         this.audioElement.src = album.songs[0].audioSrc;
+     }
+
+     controlButton(song, index) {
+       if (song === this.state.currentSong & this.state.isPlaying){
+         return <ion-icon name="pause"></ion-icon>
+       }
+       else if (song === this.state.isHovered) {
+         return <ion-icon name="play"></ion-icon>
+       }
+       else {
+         return index + 1
+       }
      }
 
      play() {
@@ -28,6 +41,14 @@ import { PlayButton, PauseButton } from 'react-player-controls';
      pause() {
       this.audioElement.pause();
       this.setState({ isPlaying: false });
+    }
+
+    onHover (song) {
+      this.setState({ isHovered: true });
+    }
+
+    offHover (song) {
+      this.setState({ isHovered: null });
     }
 
     setSong(song) {
@@ -86,10 +107,9 @@ import { PlayButton, PauseButton } from 'react-player-controls';
          <tbody>
 
          {
-   this.state.album.songs.map((song, index) => {
-       return <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
-       <td> <ion-icon name="play"></ion-icon></td>
-         <td> <ion-icon name="pause"></ion-icon></td>
+           this.state.album.songs.map((song, index) => {
+          return <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
+          <td onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)}> {this.controlButton(song, index)} </td>
        <td> {song.title}</td>
        <td> {song.duration}</td>
        </tr>
