@@ -44,7 +44,7 @@ import { PlayButton, PauseButton } from 'react-player-controls';
     }
 
     onHover (song) {
-      this.setState({ isHovered: true });
+      this.setState({ isHovered: song });
     }
 
     offHover (song) {
