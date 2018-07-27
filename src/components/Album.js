@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
-import PlayerBar from './PlayerBar';
 import Ionicon from 'react-ionicons';
 import { PlayButton, PauseButton } from 'react-player-controls';
 
@@ -113,12 +112,6 @@ import { PlayButton, PauseButton } from 'react-player-controls';
            }
          </tbody>
        </table>
-       <PlayerBar
-           isPlaying={this.state.isPlaying}
-           currentSong={this.state.currentSong}
-           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
-           handlePrevClick={() => this.handlePrevClick()}
-         />
      </section>
      )
 
