@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import albumData from './../data/albums';
 import Ionicon from 'react-ionicons';
-import { PlayButton, PauseButton } from 'react-player-controls';
 
   class Album extends Component {
   constructor(props) {
