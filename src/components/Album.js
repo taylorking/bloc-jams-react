@@ -16,6 +16,7 @@ import Ionicon from 'react-ionicons';
        currentSong: album.songs[0],
        currentTime: 0,
        duration: album.songs[0].duration,
+       formatTime: seconds,
        isPlaying: false,
        isHovered: null,
        };
@@ -53,7 +54,6 @@ import Ionicon from 'react-ionicons';
       this.setState({ isHovered: null });
     }
 
-
   componentDidMount() {
       this.eventListeners = {
    timeupdate: e => {
@@ -73,9 +73,7 @@ import Ionicon from 'react-ionicons';
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
        }
 
-
-
-    setSong(song) {
+   setSong(song) {
         console.log(song);
         this.audioElement.src = song.audioSrc;
         this.setState({ currentSong: song, isPlaying:
@@ -115,6 +113,12 @@ import Ionicon from 'react-ionicons';
     this.audioElement.currentTime = newTime;
     this.setState({ currentTime: newTime });
   }
+
+  formatTime(seconds) {
+      const newTime = this.audioElement.duration * seconds.target.value;
+      this.audioElement.formatTime = newTime;
+      this.setState({ currentTime: newTime });
+    }
 
 
      render() {
@@ -156,6 +160,7 @@ import Ionicon from 'react-ionicons';
            currentSong={this.state.currentSong}
            currentTime={this.audioElement.currentTime}
            duration={this.audioElement.duration}
+           formatTime={this.audioElement.seconds}
            handleSongClick={() => this.handleSongClick(this.state.currentSong)}
            handlePrevClick={() => this.handlePrevClick()}
            handleNextClick={() => this.handleNextClick()}
