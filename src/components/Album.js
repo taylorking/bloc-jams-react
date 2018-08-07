@@ -15,6 +15,7 @@ import Ionicon from 'react-ionicons';
        album: album,
        currentSong: album.songs[0],
        currentTime: 0,
+       currentVolume: 0;
        duration: album.songs[0].duration,
        isPlaying: false,
        isHovered: null,
@@ -113,6 +114,12 @@ import Ionicon from 'react-ionicons';
     this.setState({ currentTime: newTime });
   }
 
+handleVolumeChange() {
+    const currentVolume = this.audioElement.duration;
+    this.audioElement.currentVolume = newVolume;
+    this.setState({ currentVolume: newVolume });
+}
+
   formatTime (seconds){
       var minutes = seconds / 60;
       var seconds = seconds % 60;
@@ -163,6 +170,7 @@ import Ionicon from 'react-ionicons';
            handlePrevClick={() => this.handlePrevClick()}
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
+           handleVolumeChange={() => this.handleVolumeChange(this.state.currentVolume)}
          />
      </section>
      )
