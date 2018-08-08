@@ -120,12 +120,11 @@ import Ionicon from 'react-ionicons';
     this.setState({ volume: e.target.value });
   }
 
-  formatTime (seconds){
-      var minutes = seconds / 60;
-      var seconds = seconds % 60;
-      return minutes + ":" + seconds;
-  }
-
+  formatTime (seconds) {
+  var minutes = Math.round(seconds / 60);
+  var seconds = seconds % 60;
+  return minutes + ":" + Math.round(seconds);
+}
 
      render() {
        return (
