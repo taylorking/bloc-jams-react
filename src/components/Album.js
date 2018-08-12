@@ -6,9 +6,11 @@ import Ionicon from 'react-ionicons';
   class Album extends Component {
   constructor(props) {
        super(props);
+       formatTime;
 
        const album = albumData.find( album => {
        return album.slug === this.props.match.params.slug
+       return formatTime(this.props.currentTime)
      });
 
        this.state = {
@@ -120,7 +122,7 @@ import Ionicon from 'react-ionicons';
     this.setState({ volume: e.target.value });
   }
 
-  formatTime (seconds) {
+ formatTime (seconds) {
   var minutes = Math.round(seconds / 60);
   var seconds = seconds % 60;
   return minutes + ":" + Math.round(seconds);

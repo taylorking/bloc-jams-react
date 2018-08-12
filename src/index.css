@@ -1,5 +1,14 @@
+@font-face {
+    font-family: "myFirstFont";
+    src:url("./Pinopolis.otf");
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "myFirstFont";
+}
+
+Pinopolis{
+    font-family:"myFirstFont";
 }
