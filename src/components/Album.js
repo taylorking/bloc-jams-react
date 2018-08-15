@@ -6,11 +6,10 @@ import Ionicon from 'react-ionicons';
   class Album extends Component {
   constructor(props) {
        super(props);
-       formatTime;
 
        const album = albumData.find( album => {
        return album.slug === this.props.match.params.slug
-       return formatTime(this.props.currentTime)
+
      });
 
        this.state = {
@@ -163,6 +162,7 @@ import Ionicon from 'react-ionicons';
          </tbody>
        </table>
        <PlayerBar
+           formatTime = {this.formatTime}
            isPlaying={this.state.isPlaying}
            currentSong={this.state.currentSong}
            currentTime={this.audioElement.currentTime}
