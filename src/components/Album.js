@@ -122,9 +122,9 @@ import Ionicon from 'react-ionicons';
   }
 
  formatTime (seconds) {
-  var minutes = Math.round(seconds / 60);
+  var minutes = Math.floor(seconds / 60);
   var seconds = seconds % 60;
-  return minutes + ":" + Math.round(seconds);
+  return minutes + ":" + Math.floor(seconds);
 }
 
      render() {
