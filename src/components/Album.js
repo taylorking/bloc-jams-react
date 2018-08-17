@@ -154,8 +154,8 @@ import Ionicon from 'react-ionicons';
            this.state.album.songs.map((song, index) => {
           return <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
           <td onMouseEnter={() => this.onHover(song)} onMouseLeave={() => this.offHover(song)}> {this.controlButton(song, index)} </td>
-       <td> {song.title}</td>
-       <td> {song.duration}</td>
+          <td> {song.title}</td>
+          <td> {this.formatTime(song.duration)}</td>
        </tr>
             })
            }
