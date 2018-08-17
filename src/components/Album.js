@@ -124,7 +124,13 @@ import Ionicon from 'react-ionicons';
  formatTime (seconds) {
   var minutes = Math.floor(seconds / 60);
   var seconds = seconds % 60;
+  if (seconds < 10) {
+  return minutes + ":" + 0 + Math.floor(seconds);
+  }
+
+  else {
   return minutes + ":" + Math.floor(seconds);
+   }
 }
 
      render() {
