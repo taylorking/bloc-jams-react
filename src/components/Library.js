@@ -18,7 +18,7 @@ class Library extends Component {
               <img src={album.albumCover} alt={album.title} />
               <div>{album.title}</div>
               <div>{album.artist}</div>
-              <div>{album.songs.length} songs</div>
+              <div>{album.songs.length}songs</div>
               </Link>
            )
          }

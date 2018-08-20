@@ -129,7 +129,7 @@ import Ionicon from 'react-ionicons';
   }
 
   else {
-  return minutes + ":" + Math.floor(seconds);
+ return minutes + ":" + Math.floor(seconds);
    }
 }
 
