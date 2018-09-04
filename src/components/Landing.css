@@ -1,31 +1,14 @@
 .grid-container {
   display: grid;
   grid-row-gap: 50px;
-  
-}
-
-.row {
-align-items: center;
 
 }
-
-
-.navbar.has-shadow {
-  background-color: whitesmoke;
-  color: #363636;
-  border-color: #363636;
-}
-
-.home {
-  background: PWR;
-}
-
-
 
 h1 {
-
-  background: yellow;
-  padding: 30px;
+  font-size: 50px;
+  color: blue;
+  padding: 16px;
+  text-transform: full-width;
   text-align: center;
 
   text-shadow:   1px 0px #eee, 0px 1px #ccc,
@@ -39,9 +22,51 @@ h1 {
                  8px 8px #eee;
 }
 
+.row {
+
+  grid-template-columns: minmax(100px, max-content)
+                       repeat(auto-fill, 200px) 30%;
+  align-content: stretch;
+  padding: 20px;
+  margin: auto 0 1em 0;
+  grid-column-gap: 20px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.span_1_of_3 {
+    top: 0;
+    width: 500px;
+    padding: 10px;
+}
+
+.span_2_of_3 {
+  top: 0;
+  width: 500px;
+  padding: 10px;
+}
+
+.span_3_of_3 {
+  top: 0;
+  width: 500px;
+  padding: 10px;
+}
+
+
+.landing-image {
+
+  border: 0.1px solid #ccc;
+  max-height: 400px;
+  width: 100%;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+
+h2 {
+  padding: 10%;
+}
+
 
 body {
   display: grid;
-
-
 }
