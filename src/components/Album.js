@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 import Ionicon from 'react-ionicons';
+import style from './Album.css'
 
   class Album extends Component {
   constructor(props) {

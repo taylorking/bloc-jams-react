@@ -5,7 +5,6 @@
 }
 
 
-
 h1 {
   font-size: 50px;
   color: blue;
@@ -25,14 +24,11 @@ h1 {
 }
 
 .library {
-  border: solid blue;
-  position: fixed;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  margin: 10px;
+  color: blue;
+
 }
 
-.div {
-  color: purple;
+.albumCover {
+  border: 10px solid blue;
 }

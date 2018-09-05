@@ -1,0 +1,21 @@
+#album-info {
+  margin: 20px;
+}
+
+#song-list {
+  font-size: 25px;
+  text-indent: 10px;
+  margin: 20px;
+}
+
+#release-info {
+   font-size: 25px;
+}
+
+#buttons {
+  margin: 15px;
+}
+
+#time-control {
+  margin: 15px;
+}

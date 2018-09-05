@@ -6,19 +6,30 @@
 body {
   font-family: "myFirstFont";
   column-count: 3;
+  border: solid blue;
+  background-color: #f5f5f5;
+
 
 }
 
 html {
-    background-color: #f5f5f5;
-    border: solid blue;
-    position: absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+  background-color: #f5f5f5;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right:0;
 }
 
 .navbar {
   align-content: center;
+  border: solid blue 1px;
+  background-color: blue;
+  opacity: 0.5;
+}
+
+.navbar > a {
+  color: white;
+  font-size: 18px;
+  text-shadow: 2px 2px blue;
 }

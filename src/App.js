@@ -11,6 +11,7 @@ class App extends Component {
     return (
       <div className="App">
       <header>
+      <div className='halftone'></div>
       <div className="navbar">
         <Link to='/'>Home</Link>
         <Link to='/library'>Library</Link>

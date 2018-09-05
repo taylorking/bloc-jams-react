@@ -4,6 +4,7 @@
 
 }
 
+
 h1 {
   font-size: 50px;
   color: blue;
@@ -54,19 +55,134 @@ h1 {
 
 
 .landing-image {
-
-  border: 0.1px solid #ccc;
+  border: 1px solid blue;
   max-height: 400px;
   width: 100%;
-  box-shadow: 10px 10px 8px #888888;
 }
+
+  .halftone {
+    background-image:
+    radial-gradient(
+      circle,
+      blue 85%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 80%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 75%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 70%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 65%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 60%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 55%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 50%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 45%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 40%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 35%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 30%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 25%,
+      transparent 0
+      ),
+    radial-gradient(
+      circle,
+      blue 20%,
+      transparent 0
+      );
+
+/*
+  change all other values when changing this.
+  I suppose this'd be easier to do in Sass.
+*/
+  background-size: 1em 1em;
+
+/*
+  If you want a vertical pattern change to repeat-x, also remember to  switch the background-positions' values. Eg. "2em 0" becomes "0 2em".
+*/
+  background-repeat: round;
+
+/*
+  based on background-size value
+*/
+  background-position:
+    0 0,
+    1em 0,
+    2em 0,
+    3em 0,
+    4em 0,
+    5em 0,
+    6em 0,
+    7em 0,
+    8em 0,
+    9em 0,
+    10em 0,
+    11em 0,
+    12em 0,
+    13em 0;
+
+}
+
 
 
 h2 {
   padding: 10%;
+  color: blue;
 }
 
 
 body {
   display: grid;
+  color: blue;
+}
+
+.navbar {
+  justify-content: initial;
+}
+
+.navbar > a {
+  margin-right: 50px;
+
 }
